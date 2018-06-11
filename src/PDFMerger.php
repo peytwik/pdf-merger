@@ -12,8 +12,8 @@ class PDFMerger
     }
 
     public function GenerateFile($dest_pdf_file = ""){
-        if( !file_exists($dest_pdf_file) || $dest_pdf_file == "" ){
-            $this->OutputMessage("Output destination not found.");
+        if( $dest_pdf_file == "" ){
+            $this->OutputMessage("Invalid output destination.");
         }
 
         if( count($this->files) <= 0 ){
