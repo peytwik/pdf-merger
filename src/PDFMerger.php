@@ -13,11 +13,13 @@ class PDFMerger
 
     public function GenerateFile($dest_pdf_file){
         if( !file_exists($dest_pdf_file) || $dest_pdf_file == "" ){
-            return "Output destination not found.";
+            echo "Output destination not found.";
+            exit();
         }
 
         if( count($this->files) <= 0 ){
-            return "No PDF files to be merged.";
+            echo "No PDF files to be merged.";
+            exit();
         }
 
         $cmd = "gs -q -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -sOutputFile=" . $this->destination . " ";
@@ -27,10 +29,12 @@ class PDFMerger
             }
         }
         if( shell_exec($cmd) ){
-            return "PDF files successfully merged.";
+            echo "PDF files successfully merged.";
+            exit();
         }
         else{
-            return "Unable to merge PDF files.";
+            echo "Unable to merge PDF files.";
+            exit();
         }
     }
 
