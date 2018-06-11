@@ -26,12 +26,10 @@ class PDFMerger
                 $cmd .= $file." ";
             }
         }
-        if( shell_exec($cmd) ){
-            $this->OutputMessage("PDF files successfully merged.");
-        }
-        else{
-            $this->OutputMessage("Unable to merge PDF files.");
-        }
+        
+        $results = shell_exec($cmd);
+        $this->OutputMessage("PDF files successfully merged.");
+
     }
 
 
