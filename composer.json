@@ -1,0 +1,21 @@
+{
+    "name": "peytwik/pdf-merger",
+    "description": "PHP Library to merge PDF files",
+    "license": "MIT",
+    "support": {
+        "issues": "https://github.com/peytwik/pdf-merger/issues",
+        "source": "https://github.com/peytwik/pdf-merger"
+    },
+    "authors": [
+        {
+            "name": "Pat Santos",
+            "email": "peytwik@yahoo.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Peytwik\\PDFMerger\\": "src/"
+        }
+    },
+    "minimum-stability": "stable"
+}
