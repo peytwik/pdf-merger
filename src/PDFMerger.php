@@ -20,7 +20,7 @@ class PDFMerger
             $this->OutputMessage("No PDF files to be merged.");
         }
 
-        $cmd = "gs -q -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -sOutputFile=" . $this->destination . " ";
+        $cmd = "gs -q -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -sOutputFile=" . $dest_pdf_file . " ";
         foreach ($this->files as $file) {
             if( file_exists($file) || $file !== "" ){
                 $cmd .= $file." ";
