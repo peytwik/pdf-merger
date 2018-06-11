@@ -1,6 +1,6 @@
 <?php
 
-namespace Peytwik\PDFMerger;
+namespace Peytwik;
 
 class PDFMerger
 {
@@ -11,13 +11,13 @@ class PDFMerger
         $this->files[] = $source_pdf_file;
     }
 
-    public function GenerateFile($dest_pdf_file){
+    public function GenerateFile($dest_pdf_file = ""){
         if( !file_exists($dest_pdf_file) || $dest_pdf_file == "" ){
-            OutputMessage("Output destination not found.");
+            $this->OutputMessage("Output destination not found.");
         }
 
         if( count($this->files) <= 0 ){
-            OutputMessage("No PDF files to be merged.");
+            $this->OutputMessage("No PDF files to be merged.");
         }
 
         $cmd = "gs -q -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -sOutputFile=" . $this->destination . " ";
@@ -27,10 +27,10 @@ class PDFMerger
             }
         }
         if( shell_exec($cmd) ){
-            OutputMessage("PDF files successfully merged.");
+            $this->OutputMessage("PDF files successfully merged.");
         }
         else{
-            OutputMessage("Unable to merge PDF files.");
+            $this->OutputMessage("Unable to merge PDF files.");
         }
     }
 
