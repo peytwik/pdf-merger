@@ -1,6 +1,6 @@
 <?php
 
-namespace Peytwik;
+namespace Peytwik\PDFMerger;
 
 class PDFMerger
 {
