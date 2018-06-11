@@ -6,18 +6,13 @@ class PDFMerger
 {
 
     protected $files = [];
-    protected $destination = "";
-
-    public function __construct($dest_pdf_file){
-        $this->destination = $dest_pdf_file;
-    }
 
     public function AddFile($source_pdf_file){
         $this->files[] = $source_pdf_file;
     }
 
-    public function GenerateFile(){
-        if( !file_exists($this->destination) || $this->destination == "" ){
+    public function GenerateFile($dest_pdf_file){
+        if( !file_exists($dest_pdf_file) || $dest_pdf_file == "" ){
             return "Output destination not found.";
         }
 
