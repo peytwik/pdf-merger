@@ -2,17 +2,13 @@
 PHP Library to merge PDF files
 
 ### Using Composer
+Add this line of code to composer.json
 ```
-{
-    "require": {
-        "peytwik/pdf-merger": "dev-master"
-    }
-}
+    "peytwik/pdf-merger": "dev-master"
 ```
 
 ### Example Usage
 ```php
-
 //include autoloading
 include "vendor/autoload.php";
 
