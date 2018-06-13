@@ -8,7 +8,9 @@ class PDFMerger
     protected $files = [];
 
     public function AddFile($source_pdf_file){
-        $this->files[] = $source_pdf_file;
+        if( file_exists($source_pdf_file) ){
+            $this->files[] = $source_pdf_file;
+        }
     }
 
     public function GenerateFile($dest_pdf_file = ""){
