@@ -1,5 +1,5 @@
 # PDFMerger
-## PHP Library to merge PDF files
+PHP Library to merge PDF files
 
 ### Using Composer
 ```
@@ -27,6 +27,6 @@ $merger->AddFile($dir . 'pdf-sample.pdf');
 $merger->AddFile($dir . 'sample.pdf');
 
 //generate the file
-$merger->GenerateFile($dir . 'merged.pdf');
+$output = $merger->GenerateFile($dir . 'merged.pdf');
 
 ```
