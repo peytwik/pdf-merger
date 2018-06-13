@@ -34,7 +34,7 @@ class PDFMerger
 
 
     protected function OutputMessage($message){
-        echo $message;
+        return $message;
         exit();
     }
 
